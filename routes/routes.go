@@ -23,7 +23,7 @@ func RoutesApi(e *echo.Echo, usecaseSvc services.UsecaseService) {
 }
 
 func TestApiConnection(c echo.Context) error {
-	result := utils.ResponseJSON(true, http.StatusOK, "API Success Initialized", nil)
+	result := utils.ResponseJSON(true, utils.ToString(http.StatusOK), "API Success Initialized", nil)
 
 	return c.JSON(http.StatusOK, result)
 }

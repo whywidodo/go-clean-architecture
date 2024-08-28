@@ -3,7 +3,7 @@ package models
 import "time"
 
 type Response struct {
-	StatusCode       int         `json:"statusCode"`
+	StatusCode       string      `json:"statusCode"`
 	Success          bool        `json:"success"`
 	ResponseDatetime time.Time   `json:"responseDatetime"`
 	Result           interface{} `json:"result"`
