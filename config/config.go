@@ -12,6 +12,7 @@ var (
 	APPUrl    = GetEnv("APP_URL")
 	APPPort   = GetEnv("APP_PORT")
 	APPPrefix = GetEnv("APP_PREFIX")
+	APPKey    = GetEnv("APP_KEY")
 
 	// Database Configuration
 	DBDriver = GetEnv("DB_DRIVER")
