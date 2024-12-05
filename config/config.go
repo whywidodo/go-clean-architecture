@@ -1,7 +1,7 @@
 package config
 
 import (
-	"go-clean-arhitecture/constants"
+	"go-clean-architecture/constants"
 	"os"
 
 	"github.com/joho/godotenv"

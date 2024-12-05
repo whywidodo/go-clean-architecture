@@ -1,4 +1,4 @@
-module go-clean-arhitecture
+module go-clean-architecture
 
 go 1.22.3
 

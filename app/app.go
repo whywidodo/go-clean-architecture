@@ -2,8 +2,8 @@ package app
 
 import (
 	"database/sql"
-	"go-clean-arhitecture/repositories"
-	"go-clean-arhitecture/services"
+	"go-clean-architecture/repositories"
+	"go-clean-architecture/services"
 )
 
 func SetupApp(DB *sql.DB, repo repositories.Repository) services.UsecaseService {

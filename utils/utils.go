@@ -2,7 +2,7 @@ package utils
 
 import (
 	"encoding/json"
-	"go-clean-arhitecture/models"
+	"go-clean-architecture/models"
 	"strconv"
 	"strings"
 	"time"

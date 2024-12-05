@@ -3,7 +3,7 @@ package config
 import (
 	"context"
 	"fmt"
-	"go-clean-arhitecture/constants"
+	"go-clean-architecture/constants"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

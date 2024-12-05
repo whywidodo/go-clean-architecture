@@ -1,10 +1,10 @@
 package routes
 
 import (
-	"go-clean-arhitecture/config"
-	"go-clean-arhitecture/constants"
-	"go-clean-arhitecture/services"
-	"go-clean-arhitecture/utils"
+	"go-clean-architecture/config"
+	"go-clean-architecture/constants"
+	"go-clean-architecture/services"
+	"go-clean-architecture/utils"
 	"log"
 	"net/http"
 
