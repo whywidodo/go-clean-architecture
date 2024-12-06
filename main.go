@@ -105,6 +105,11 @@ func init() {
 			report = echo.NewHTTPError(http.StatusInternalServerError, err.Error())
 		}
 
+		// Handle Duplicate Error Response
+		if c.Response().Committed {
+			return
+		}
+
 		result := utils.ResponseJSON(constants.FALSE_VALUE, utils.ToString(report.Code), err.Error(), nil)
 
 		c.Logger().Error(report)
