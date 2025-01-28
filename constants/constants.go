@@ -25,3 +25,9 @@ const (
 	YES_VALUE = "YES"
 	NO_VALUE  = "NO"
 )
+
+var (
+	// Empty Object Struct
+	EMPTY_ARRAY_INTERFACE  = []interface{}{}
+	EMPTY_SINGLE_INTERFACE = map[string]interface{}{}
+)
