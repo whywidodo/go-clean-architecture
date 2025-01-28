@@ -31,13 +31,13 @@ func BindValidateStruct(ctx echo.Context, i interface{}) error {
 	return nil
 }
 
-func ResponseJSON(success bool, code string, msg string, result interface{}) models.Response {
+func ResponseJSON(success bool, code string, msg map[string]string, result interface{}) models.Response {
 	tm := time.Now()
 	response := models.Response{
 		Success:          success,
 		StatusCode:       code,
 		Result:           result,
-		Message:          msg,
+		Messages:         msg,
 		ResponseDatetime: tm,
 	}
 

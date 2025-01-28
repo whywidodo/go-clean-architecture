@@ -110,7 +110,10 @@ func init() {
 			return
 		}
 
-		result := utils.ResponseJSON(constants.FALSE_VALUE, utils.ToString(report.Code), err.Error(), nil)
+		result := utils.ResponseJSON(constants.FALSE_VALUE, utils.ToString(report.Code), map[string]string{
+			"en": report.Message.(string),
+			"id": report.Message.(string),
+		}, nil)
 
 		c.Logger().Error(report)
 		c.JSON(report.Code, result)
