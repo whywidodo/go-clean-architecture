@@ -7,6 +7,7 @@ import (
 	"go-clean-architecture/app"
 	"go-clean-architecture/config"
 	"go-clean-architecture/constants"
+	"go-clean-architecture/models"
 	"go-clean-architecture/repositories"
 	"go-clean-architecture/routes"
 	"go-clean-architecture/utils"
@@ -110,10 +111,11 @@ func init() {
 			return
 		}
 
-		result := utils.ResponseJSON(constants.FALSE_VALUE, utils.ToString(report.Code), map[string]string{
-			"en": report.Message.(string),
-			"id": report.Message.(string),
-		}, nil)
+		msgResponse := models.MessageResponse{
+			Id: report.Message.(string),
+			En: report.Message.(string),
+		}
+		result := utils.ResponseJSON(constants.FALSE_VALUE, utils.ToString(report.Code), msgResponse, nil)
 
 		c.Logger().Error(report)
 		c.JSON(report.Code, result)

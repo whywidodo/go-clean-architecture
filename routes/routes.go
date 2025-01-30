@@ -3,6 +3,7 @@ package routes
 import (
 	"go-clean-architecture/config"
 	"go-clean-architecture/constants"
+	"go-clean-architecture/models"
 	"go-clean-architecture/services"
 	"go-clean-architecture/utils"
 	"log"
@@ -46,10 +47,11 @@ func RoutesApi(e *echo.Echo, usecaseSvc services.UsecaseService) {
 }
 
 func TestApiConnection(c echo.Context) error {
-	result := utils.ResponseJSON(true, utils.ToString(http.StatusOK), map[string]string{
-		"en": "API Connection Successfull",
-		"id": "Koneksi API Berhasil",
-	}, nil)
+	msgResponse := models.MessageResponse{
+		Id: "Konesksi API Berhasil",
+		En: "API Connection Successfull",
+	}
+	result := utils.ResponseJSON(true, utils.ToString(http.StatusOK), msgResponse, nil)
 
 	return c.JSON(http.StatusOK, result)
 }
