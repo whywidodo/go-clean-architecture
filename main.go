@@ -67,7 +67,9 @@ func main() {
 
 	// Routing API
 	routes.RoutesApi(echoHandler, services)
-	echoHandler.Use(middleware.Logger())
+	echoHandler.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: "[${time_rfc3339}] ${method} ${uri} status=${status} latency=${latency_human}\n",
+	}))
 
 	echoHandler.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowCredentials: constants.TRUE_VALUE,
