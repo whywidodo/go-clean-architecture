@@ -28,6 +28,6 @@ const (
 
 var (
 	// Empty Object Struct
-	EMPTY_ARRAY_INTERFACE  = []interface{}{}
-	EMPTY_SINGLE_INTERFACE = map[string]interface{}{}
+	EMPTY_ARRAY_INTERFACE  = []any{}
+	EMPTY_SINGLE_INTERFACE = map[string]any{}
 )

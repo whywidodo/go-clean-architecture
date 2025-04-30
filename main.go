@@ -36,7 +36,7 @@ var (
 var ctx = context.Background()
 
 // Custom Validator and Translation
-func (cv *CustomValidator) Validate(i interface{}) error {
+func (cv *CustomValidator) Validate(i any) error {
 	err := cv.validator.Struct(i)
 	if err != nil {
 		errs := err.(validator.ValidationErrors)

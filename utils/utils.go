@@ -19,7 +19,7 @@ func ReplaceSQL(old, searchPattern string) string {
 	return old
 }
 
-func BindValidateStruct(ctx echo.Context, i interface{}) error {
+func BindValidateStruct(ctx echo.Context, i any) error {
 	if err := ctx.Bind(i); err != nil {
 		return err
 	}
@@ -31,7 +31,7 @@ func BindValidateStruct(ctx echo.Context, i interface{}) error {
 	return nil
 }
 
-func ResponseJSON(success bool, code string, msg models.MessageResponse, result interface{}) models.Response {
+func ResponseJSON(success bool, code string, msg models.MessageResponse, result any) models.Response {
 	tm := time.Now()
 	response := models.Response{
 		Success:          success,
@@ -44,7 +44,7 @@ func ResponseJSON(success bool, code string, msg models.MessageResponse, result 
 	return response
 }
 
-func ToString(data interface{}) string {
+func ToString(data any) string {
 	bytes, _ := json.Marshal(data)
 	return string(bytes)
 }
